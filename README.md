@@ -1,2 +1,2 @@
 # Colors
-Terminal colors write in golang.
+Terminal colors ansi escape code write in golang.
