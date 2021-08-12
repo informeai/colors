@@ -119,3 +119,15 @@ func TestSprintf(t *testing.T) {
 	}
 
 }
+
+//go test -v -run ^TestTo256
+func TestTo256(t *testing.T) {
+	c := NewColors()
+	c = c.To256(92, 15)
+	if c == nil {
+		t.Errorf("TestTo256(): got -> %v, want: != nil", c)
+	}
+	s := c.Sprint("this is 8-Bit colors.")
+	log.Println(s)
+
+}

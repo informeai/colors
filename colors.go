@@ -96,6 +96,13 @@ func (c *Colors) Add(value ...Attribute) *Colors {
 	return c
 }
 
+//To256 return new colors of table the 256 colors(8-Bits).
+func (c *Colors) To256(fg, bg int) *Colors {
+	c.params = make([]Attribute, 0)
+	c.params = append(c.params, 38, 5, Attribute(fg), 48, 5, Attribute(bg))
+	return c
+}
+
 // Println formats using the default formats for its operands and writes to
 // standard output.
 func (c *Colors) Println(a ...interface{}) (int, error) {

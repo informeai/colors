@@ -17,6 +17,11 @@ Add foreground and background.
 ```
 c = c.Add(colors.FgGreen,colors.BgWhite)
 ```
+Create 8-Bit colors.
+```
+//colors.To256(fg,bg int)
+c = c.To256(18,15)
+```
 Return formated string colors.
 ```
 s := c.Sprintf("%v", "any text.")
