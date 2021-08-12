@@ -22,6 +22,12 @@ Create 8-Bit colors.
 //colors.To256(fg,bg int)
 c = c.To256(18,15)
 ```
+Create RGB colors.
+```
+fg := RGB{R: 123, G: 159, B: 23}
+bg := RGB{R: 0, G: 0, B: 0}
+c = c.ToRGB(fg,bg)
+```
 Return formated string colors.
 ```
 s := c.Sprintf("%v", "any text.")

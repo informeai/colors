@@ -83,6 +83,13 @@ type Colors struct {
 	params []Attribute
 }
 
+//RGB is struct for colors rgb.
+type RGB struct {
+	R int
+	G int
+	B int
+}
+
 //NewColorsBasic is return new color instance.
 func NewColors() *Colors {
 	return &Colors{
@@ -100,6 +107,13 @@ func (c *Colors) Add(value ...Attribute) *Colors {
 func (c *Colors) To256(fg, bg int) *Colors {
 	c.params = make([]Attribute, 0)
 	c.params = append(c.params, 38, 5, Attribute(fg), 48, 5, Attribute(bg))
+	return c
+}
+
+//ToRGB return new colors with format rgb.
+func (c *Colors) ToRGB(fg, bg RGB) *Colors {
+	c.params = make([]Attribute, 0)
+	c.params = append(c.params, 38, 2, Attribute(fg.R), Attribute(fg.G), Attribute(fg.B), 48, 2, Attribute(bg.R), Attribute(bg.G), Attribute(bg.B))
 	return c
 }
 

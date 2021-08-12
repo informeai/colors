@@ -131,3 +131,17 @@ func TestTo256(t *testing.T) {
 	log.Println(s)
 
 }
+
+//go test -v -run ^TestToRGB
+func TestToRGB(t *testing.T) {
+	c := NewColors()
+	foreground := RGB{R: 123, G: 159, B: 23}
+	background := RGB{R: 0, G: 0, B: 0}
+	c = c.ToRGB(foreground, background)
+	if c == nil {
+		t.Errorf("TestRGB(): got -> %v, want: != nil", c)
+	}
+	s := c.Sprint("this is RGB colors.")
+	log.Println(s)
+
+}
